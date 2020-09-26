@@ -57,7 +57,7 @@ plugins:
 
 author:
   name   : "Hamid Eftekhari"
-  avatar : "/data/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.jpg"
   bio    : "PhD candidate in Statistics"
   links:
     - label: "Website"
