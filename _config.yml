@@ -126,9 +126,6 @@ tag_archive:
   path: /tags/
 
 collections:
-  folio:
-    output: true
-  
    portfolio:
      output: true
      permalink: /:collection/:path/
