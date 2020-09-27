@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Hamid Eftekhari"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "PhD candidate in Statistics"
+  bio    : "PhD candidate in Statistics, interested in high-dimensional inference and machine learning."
   links:
 #     - label: "Website"
 #       icon: "fas fa-fw fa-link"
