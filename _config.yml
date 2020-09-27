@@ -73,10 +73,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/hamid-eftekhari-a541a5118/"
-    - label: " Scholar"
-      icon: "fab fa-fw fa-google"
-      url: "https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en"
-
 
 footer:
   links:
@@ -109,14 +105,14 @@ defaults:
     values:
       layout: single
       author_profile: true
-   # _portfolio
-   - scope:
-       path: ""
-       type: portfolio
-     values:
-       layout: single
-       author_profile: false
-       share: true
+  # _portfolio
+  - scope:
+      path: "_portfolio"
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 category_archive:
   type: liquid
@@ -126,7 +122,6 @@ tag_archive:
   path: /tags/
 
 collections:
-   portfolio:
-     output: true
-     permalink: /:collection/:path/
-  
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
