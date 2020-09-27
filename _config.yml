@@ -132,3 +132,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+    
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-179122806-1"
+    anonymize_ip: false # default
