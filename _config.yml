@@ -88,6 +88,9 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/hamid-eftekhari-a541a5118/"
+    - label: "Scholar"
+      icon: "fab fa-fw fa-google"
+      url: "https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en"
 
       
 defaults:
