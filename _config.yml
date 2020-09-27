@@ -16,7 +16,7 @@
 title: Hamid Eftekhari
 email: hamidef@umich.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Hamid Eftekhari's personal page
+  Hamid Eftekhari's Personal Page
 # twitter_username: username
 github_username: ehamid
 minimal_mistakes_skin: default
@@ -33,6 +33,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+  - _portfolio
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
