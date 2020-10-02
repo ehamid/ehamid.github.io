@@ -18,3 +18,4 @@ In this project we developed methods for constructing confidence intervals and h
 
 The code for experiments in the paper is available on github: [https://github.com/ehamid/sim_debiasing](https://github.com/ehamid/sim_debiasing)
 
+{% include gallery caption="More efficient estimation using Hermite polynomials" %}
