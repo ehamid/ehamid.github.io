@@ -9,8 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>c-Optimal Designs for High-dimensional Linear Models - Hamid Eftekhari</title>
-<meta name="description" content="Design of Experiments in High Dimensions using Semi-definite Programming">
+<!-- begin _includes/seo.html --><title>Inference for High-dimensional Single-Index Models - Hamid Eftekhari</title>
+<meta name="description" content="De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.">
 
 
   <meta name="author" content="Hamid Eftekhari">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hamid Eftekhari">
-<meta property="og:title" content="c-Optimal Designs for High-dimensional Linear Models">
-<meta property="og:url" content="/portfolio/c_optimality/">
+<meta property="og:title" content="Inference for High-dimensional Single-Index Models">
+<meta property="og:url" content="/portfolio/hd_sim_inference/">
 
 
-  <meta property="og:description" content="Design of Experiments in High Dimensions using Semi-definite Programming">
-
-
-
-  <meta property="og:image" content="/assets/images/c_optimal/shepp_lap_filter.png">
+  <meta property="og:description" content="De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.">
 
 
 
-
-
-  <meta property="article:published_time" content="2020-11-01T00:07:23-04:00">
+  <meta property="og:image" content="/assets/images/hd_sim/histogram.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2020-11-01T13:39:45-05:00">
 
-<link rel="canonical" href="/portfolio/c_optimality/">
+
+
+
+
+
+<link rel="canonical" href="/portfolio/hd_sim_inference/">
 
 
 
@@ -103,7 +103,8 @@
 
 <!-- end custom head snippets -->
 
-  </head>
+  <script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 
   <body class="layout--single">
     <nav class="skip-links">
@@ -176,15 +177,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="c-Optimal Designs for High-dimensional Linear Models">
-    <meta itemprop="description" content="Design of Experiments in High Dimensions using Semi-definite Programming">
+    <meta itemprop="headline" content="Inference for High-dimensional Single-Index Models">
+    <meta itemprop="description" content="De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.">
     
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">c-Optimal Designs for High-dimensional Linear Models
+          <h1 id="page-title" class="page__title" itemprop="headline">Inference for High-dimensional Single-Index Models
 </h1>
           
 
@@ -194,8 +195,35 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Simulation experiments for our paper on c-optimal designs in high-dimensional linear models are in <a href="https://github.com/ehamid/HD_DoE/blob/main/DoE-Simulations.ipynb">this Jupyter notebook</a>.
-The preprint is available on Arxiv: <a href="https://arxiv.org/abs/2010.12580">https://arxiv.org/abs/2010.12580</a>.</p>
+        <p>Preprint on Arxiv: <a href="https://arxiv.org/abs/1909.03540">https://arxiv.org/abs/1909.03540</a></p>
+
+<p>In this project we developed methods for constructing confidence intervals and hypothesis tests for the linear component of high-dimensional single-index models.
+Single-index models generalize linear models by allowing the reponse $ y $ to depend on a non-linear function of a linear combination of the predictors:
+\[ y = g(\langle x, \beta \rangle ) \]
+This can avoid curse of dimensionality because we are not dealing with a fully non-parametric model $y = g(x)$ which suffers from curse of dimensionality. Even for a high-dimensional \(\beta\), we still estimate \(\beta\) if it is sparse and the design is elliptically symmetric.</p>
+
+<p>The code for experiments in the paper is available on github: <a href="https://github.com/ehamid/sim_debiasing">https://github.com/ehamid/sim_debiasing</a></p>
+
+<figure class="half ">
+  
+    
+      <a href="/assets/images/hd_sim/link.png">
+          <img src="/assets/images/hd_sim/link.png" alt="Using Hermite expansions to estimate link function">
+      </a>
+    
+  
+    
+      <a href="/assets/images/hd_sim/histogram.png">
+          <img src="/assets/images/hd_sim/histogram.png" alt="Histogram comparing efficient and plain de-biased estimates">
+      </a>
+    
+  
+  
+    <figcaption>More efficient estimation using Hermite polynomials
+</figcaption>
+  
+</figure>
+
 
         
       </section>
@@ -212,22 +240,22 @@ The preprint is available on Arxiv: <a href="https://arxiv.org/abs/2010.12580">h
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=c-Optimal+Designs+for+High-dimensional+Linear+Models%20%2Fportfolio%2Fc_optimality%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Inference+for+High-dimensional+Single-Index+Models%20%2Fportfolio%2Fhd_sim_inference%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fportfolio%2Fc_optimality%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fportfolio%2Fhd_sim_inference%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fportfolio%2Fc_optimality%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fportfolio%2Fhd_sim_inference%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/portfolio/c_optimality/" class="pagination--pager" title="c-Optimal Designs for High-dimensional Linear Models
+">Previous</a>
     
     
-      <a href="/portfolio/hd_sim_inference/" class="pagination--pager" title="Inference for High-dimensional Single-Index Models
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
