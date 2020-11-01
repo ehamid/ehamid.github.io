@@ -55,6 +55,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-spaceship
 
 author:
   name   : "Hamid Eftekhari"
@@ -92,7 +93,7 @@ footer:
       icon: "fab fa-fw fa-google"
       url: "https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en"
 
-      
+
 defaults:
   # _posts
   - scope:
@@ -132,7 +133,7 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-    
+
 analytics:
   provider: "google-gtag"
   google:
