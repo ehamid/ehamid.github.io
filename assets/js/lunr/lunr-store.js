@@ -1,6 +1,6 @@
 var store = [{
         "title": "c-Optimal Designs for High-dimensional Linear Models",
-        "excerpt":"Simulation experiments for our paper on c-optimal designs in high-dimensional linear models are in this Jupyter notebook. The preprint is available on Arxiv: https://arxiv.org/abs/2010.12580.  ","categories": [],
+        "excerpt":"Simulation experiments for our paper on c-optimal designs in high-dimensional linear models are in this Jupyter notebook. Check out the pre-print on Arxiv: https://arxiv.org/abs/2010.12580.  ","categories": [],
         "tags": [],
         "url": "/portfolio/c_optimality/",
         "teaser": "/assets/images/c_optimal/shepp_lap_filter.png"
