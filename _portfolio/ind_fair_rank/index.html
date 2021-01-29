@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
   Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -9,8 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Posts by Year - Hamid Eftekhari</title>
-<meta name="description" content="Hamid Eftekhari’s Personal Page">
+<!-- begin _includes/seo.html --><title>Individually Fair Rankings - Hamid Eftekhari</title>
+<meta name="description" content="An algorithm for training individually fair learning-to-rank systems using optimal transport tools.">
 
 
   <meta name="author" content="Hamid Eftekhari">
@@ -20,24 +20,26 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hamid Eftekhari">
-<meta property="og:title" content="Posts by Year">
-<meta property="og:url" content="https://ehamid.github.io/posts/">
+<meta property="og:title" content="Individually Fair Rankings">
+<meta property="og:url" content="http://localhost:4000/_portfolio/ind_fair_rank/">
 
 
-  <meta property="og:description" content="Hamid Eftekhari’s Personal Page">
-
-
-
+  <meta property="og:description" content="An algorithm for training individually fair learning-to-rank systems using optimal transport tools.">
 
 
 
-
+  <meta property="og:image" content="http://localhost:4000/assets/images/ind_fair_rank/ndcg.png">
 
 
 
 
 
-<link rel="canonical" href="https://ehamid.github.io/posts/">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/_portfolio/ind_fair_rank/">
 
 
 
@@ -48,7 +50,7 @@
     
       "@type": "Person",
       "name": null,
-      "url": "https://ehamid.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -99,7 +101,7 @@
 
   </head>
 
-  <body class="layout--posts">
+  <body class="layout--default">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -161,141 +163,13 @@
 
 
     <div class="initial-content">
-      
+      <p>This is joint work with <a href="https://amandarg.github.io">Amanda Bower</a>, <a href="https://moonfolk.github.io">Mikhail Yurochkin</a> and <a href="https://yuekai.github.io">Yuekai Sun</a> and was accepted to ICLR 2021 for a poster presentation.</p>
 
+<p>Abstract: We develop an algorithm to train individually fair learning-to-rank (LTR) models. The proposed approach ensures items from minority groups appear alongside similar items from majority groups. This notion of fair ranking is based on the definition of individual fairness from supervised learning and is more nuanced than prior fair LTR approaches that simply ensure the ranking model provides underrepresented items with a basic level of exposure. The crux of our method is an optimal transport-based regularizer that enforces individual fairness and an efficient algorithm for optimizing the regularizer. We show that our approach leads to certifiably individually fair LTR models and demonstrate the efficacy of our method on ranking tasks subject to demographic biases.
+One-sentence Summary: We present an algorithm for training individually fair learning-to-rank systems using optimal transport tools.</p>
 
+<p>Openreview page: <a href="https://openreview.net/forum?id=71zCSP_HuBN">https://openreview.net/forum?id=71zCSP_HuBN</a>.</p>
 
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-    <div class="author__avatar">
-      
-        <img src="/assets/images/bio-photo.jpg" alt="Hamid Eftekhari" itemprop="image">
-      
-    </div>
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Hamid Eftekhari</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>PhD candidate in Statistics at the University of Michigan, interested in high-dimensional inference and machine learning.</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-        
-          
-            <li><a href="https://github.com/ehamid" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-            <li><a href="https://www.linkedin.com/in/hamid-eftekhari-a541a5118/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
-          
-        
-          
-            <li><a href="https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-google" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
-          
-        
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
-
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title">Posts by Year</h1>
-    
-    
-
-
-<ul class="taxonomy__index">
-  
-  
-</ul>
-
-
-
-
-
-  </div>
-</div>
     </div>
 
     
@@ -342,7 +216,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2020 Hamid Eftekhari. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2021 Hamid Eftekhari. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

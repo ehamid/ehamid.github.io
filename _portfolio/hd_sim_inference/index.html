@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
   Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -9,8 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Projects - Hamid Eftekhari</title>
-<meta name="description" content="Hamid Eftekhari’s Personal Page">
+<!-- begin _includes/seo.html --><title>Inference for High-dimensional Single-Index Models - Hamid Eftekhari</title>
+<meta name="description" content="De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.">
 
 
   <meta name="author" content="Hamid Eftekhari">
@@ -20,24 +20,26 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hamid Eftekhari">
-<meta property="og:title" content="Projects">
-<meta property="og:url" content="https://ehamid.github.io/portfolio/">
+<meta property="og:title" content="Inference for High-dimensional Single-Index Models">
+<meta property="og:url" content="http://localhost:4000/_portfolio/hd_sim_inference/">
 
 
-  <meta property="og:description" content="Hamid Eftekhari’s Personal Page">
-
-
-
+  <meta property="og:description" content="De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.">
 
 
 
-
+  <meta property="og:image" content="http://localhost:4000/assets/images/hd_sim/histogram.png">
 
 
 
 
 
-<link rel="canonical" href="https://ehamid.github.io/portfolio/">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/_portfolio/hd_sim_inference/">
 
 
 
@@ -48,7 +50,7 @@
     
       "@type": "Person",
       "name": null,
-      "url": "https://ehamid.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -97,9 +99,10 @@
 
 <!-- end custom head snippets -->
 
-  </head>
+  <script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 
-  <body class="layout--collection wide">
+  <body class="layout--default">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -161,187 +164,36 @@
 
 
     <div class="initial-content">
-      
+      <p>Preprint on Arxiv: <a href="https://arxiv.org/abs/1909.03540">https://arxiv.org/abs/1909.03540</a></p>
 
+<p>In this project we developed methods for constructing confidence intervals and hypothesis tests for the linear component of high-dimensional single-index models.
+Single-index models generalize linear models by allowing the reponse $ y $ to depend on a non-linear function of a linear combination of the predictors:
+\[ y = g(\langle x, \beta \rangle ) \]
+This can avoid curse of dimensionality because we are not dealing with a fully non-parametric model $y = g(x)$ which suffers from curse of dimensionality. Even for a high-dimensional \(\beta\), we still estimate \(\beta\) if it is sparse and the design is elliptically symmetric.</p>
 
+<p>The code for experiments in the paper is available on github: <a href="https://github.com/ehamid/sim_debiasing">https://github.com/ehamid/sim_debiasing</a></p>
 
-<div id="main" role="main">
+<figure class="half ">
   
-  <div class="sidebar sticky">
+    
+      <a href="/assets/images/hd_sim/link.png">
+          <img src="/assets/images/hd_sim/link.png" alt="Using Hermite expansions to estimate link function">
+      </a>
+    
   
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
+    
+      <a href="/assets/images/hd_sim/histogram.png">
+          <img src="/assets/images/hd_sim/histogram.png" alt="Histogram comparing efficient and plain de-biased estimates">
+      </a>
+    
   
-    <div class="author__avatar">
-      
-        <img src="/assets/images/bio-photo.jpg" alt="Hamid Eftekhari" itemprop="image">
-      
-    </div>
   
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Hamid Eftekhari</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>PhD candidate in Statistics at the University of Michigan, interested in high-dimensional inference and machine learning.</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-        
-          
-            <li><a href="https://github.com/ehamid" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-            <li><a href="https://www.linkedin.com/in/hamid-eftekhari-a541a5118/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
-          
-        
-          
-            <li><a href="https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-google" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
-          
-        
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
+    <figcaption>More efficient estimation using Hermite polynomials
+</figcaption>
   
-  </div>
+</figure>
 
 
-
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title">Projects</h1>
-    
-    
-
-
-
-<div class="entries-grid">
-  
-
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/c_optimal/shepp_lap_filter.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/portfolio/c_optimality/" rel="permalink">c-Optimal Designs for High-dimensional Linear Models
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Design of Experiments in High Dimensions using Semi-definite Programming
-</p>
-  </article>
-</div>
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/hd_sim/histogram.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/portfolio/hd_sim_inference/" rel="permalink">Inference for High-dimensional Single-Index Models
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">De-biasing technique for non-linear models + more efficient estimation using Hermite polynomials.
-</p>
-  </article>
-</div>
-
-</div>
-
-  </div>
-</div>
     </div>
 
     
@@ -388,7 +240,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2020 Hamid Eftekhari. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2021 Hamid Eftekhari. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
