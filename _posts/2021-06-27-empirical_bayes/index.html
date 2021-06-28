@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hamid Eftekhari">
 <meta property="og:title" content="Empirical Bayes for Binomial Probabilities">
-<meta property="og:url" content="https://ehamid.github.io/_posts/empirical_bayes/">
+<meta property="og:url" content="https://ehamid.github.io/_posts/2021-06-27-empirical_bayes/">
 
 
   <meta property="og:description" content="Hamid Eftekhari’s Personal Page">
@@ -37,7 +37,7 @@
 
 
 
-<link rel="canonical" href="https://ehamid.github.io/_posts/empirical_bayes/">
+<link rel="canonical" href="https://ehamid.github.io/_posts/2021-06-27-empirical_bayes/">
 
 
 
@@ -171,22 +171,25 @@
 
 <p>Specifically, we are interested in cases where \(m \ll n\) (say, \(m = 5\)). Clearly, in this case we have almost as many parameters as observations, and the problem is therefore called a high-dimensional estimation problem. In such cases it is usually beneficial to dispense with the unbiasedness requirement and instead use some sort of shrinkage to trade variance for bias, hoping that at the end this tradeoff results in a better estimator.</p>
 
-<p>Empirical Bayes is one such methodology that allows borrowing strength when faced with many estimation problems together. In this problem, we can relate all these \(n\) seemingly disparate problems by assuming that the parameters \(p_i\) are themselves iid random variables generated according to a prior \(\pi(p)\). In contrast to a genuine Bayesian method, we do not speficy the prior \(\pi(p)\) beforehand.</p>
+<p>Empirical Bayes is one such methodology that allows borrowing strength when faced with many estimation problems together. In this problem, we can relate all these \(n\) seemingly disparate problems by assuming that the parameters \(p_i\) are themselves iid random variables generated according to a prior \(\pi(p)\). In contrast to a genuine Bayesian method, we do not specify the prior \(\pi(p)\) beforehand.</p>
 
 <p>Let us follow this line of thinking for our problem. The posterior mean seems like a reasonable estimator of \(p_i\) if we can compute it without needing to specify the prior. We have</p>
 
-<p>\[
-E[p_i \mid X_i] = \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{\int {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)} = \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{f_m(X_i)},
-\]
-where \(f_m(X_i)\) denotes the marginal mass/density function of data at \(X_i\) given Bernoulli $m$ trials.
+\[\begin{align*}
+E[p_i \mid X_i] &amp;= \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{\int {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}\\
+&amp;= \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{f_m(X_i)},
+\end{align*}\]
+
+<p>where \(f_m(X_i)\) denotes the marginal mass/density function of data at \(X_i\) given \(m\) Bernoulli trials.
 It seems we are out of luck unless we choose a prior and compute the integral (analytically or via stochastic methods) in the numerator. But that’s where the genius of Robbins’s Empirical Bayes comes in.</p>
 
 <p>The numerator already looks kind of like the denominator. Let’s see if we can write it in terms of a quantity that can be estimated based on data alone (like the marginal in the denominator). We can rewrite the numerator as</p>
 
-<p>\[ 
-\int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i) = \frac \int {m+1 \choose X_i+1} p_i^{X_i+1} (1 - p_i)^{(m+1) - (X_i+1)} d\pi(p_i) <br>
-= \frac{X_i + 1}{(m+1)} f_{m+1}(X_i + 1),
-\]
+<p>\(\begin{align*}
+&amp; \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i) \\
+&amp;= \frac{ {m \choose X_i} }{ {m+1 \choose X_i+1} } \int {m+1 \choose X_i+1} p_i^{X_i+1} (1 - p_i)^{(m+1) - (X_i+1)} d\pi(p_i) \\
+&amp;= \frac{X_i + 1}{(m+1)} f_{m+1}(X_i + 1),
+\end{align*}\)
 where \(f_{m+1}\) is the p.m.f. of data but now given \(m+1\) trials. Plugging this back into the equation for the posterior mean, we find</p>
 
 <p>\[
@@ -201,9 +204,9 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
 
 <p>It is less clear how to estimate \(\hat{f}_{m+1}(k)\) since it requires data from \(\operatorname{Bin}(m+1, p_i)\) distribution which we don’t have. We can not make up the extra \((m+1)\)th observation, but what we can do, is to first pretend we only observed \(m-1\) observations (and replace \(m\) by \(m-1\) in the above formula), and then bring in the \(m\)th trial as the extra observation. This is exactly what <a href="https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%201:%20Contributions%20to%20the%20Theory%20of%20Statistics/chapter/An%20Empirical%20Bayes%20Approach%20to%20Statistics/bsmsp/1200501653">Robbins (1955)</a> suggested: if we let \(X_i'\) be the number of successes among the first \(m-1\) trials in stage \(i\), then we can compute an estimate</p>
 
-<p>\[
-\hat{p}<em>i = \frac{ X_i’ + 1 }{m} \cdot \frac{\hat{f}</em>{m}(X_i’ + 1)}{\hat{f}_{m-1}.(X_i’)}.
-\]</p>
+\[\begin{align*}
+\hat{p}_i = \frac{ X_i' + 1 }{m} \cdot \frac{\hat{f}_{m}(X_i' + 1)}{\hat{f}_{m-1}.(X_i')}.
+\end{align*}\]
 
 <p>This doesn’t look too bad. In a future post I’ll show that estimating odds \(p_i / (1 - p_i)\) or log-odds \(\log(p_i / (1 - p_i) )\) may be more straightforward, and then we can compare several of these estimators in our particular problem.</p>
 
