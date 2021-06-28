@@ -18,8 +18,8 @@ var store = [{
         "teaser": "/assets/images/ind_fair_rank/ndcg.png"
       },{
         "title": "Empirical Bayes for Binomial Probabilities",
-        "excerpt":"In a recent project I encountered a problem that after some pre-processing reduces to estimation of probabilities for many independent Binomial experiments each having a different success probability. Also, in each experiment the number of trials is not large, so some way of pooling the data seemed appropriate. I thought...","categories": [],
-        "tags": [],
-        "url": "/empirical_bayes/",
+        "excerpt":"In a recent project I encountered a problem that after some pre-processing reduces to estimation of probabilities for many independent Binomial experiments each having a different success probability. Also, in each experiment the number of trials is not large, so some way of pooling the data seemed appropriate. I thought...","categories": ["Statistics"],
+        "tags": ["Empirical Bayes","Hierarchical Bayes","Large-Scale Inference"],
+        "url": "/statistics/empirical-bayes/",
         "teaser": null
       }]
