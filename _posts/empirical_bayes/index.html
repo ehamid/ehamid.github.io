@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Empirical Bayes for Binomial Probabilities - Hamid Eftekhari</title>
+<meta name="description" content="Hamid Eftekhari’s Personal Page">
+
+
+  <meta name="author" content="Hamid Eftekhari">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hamid Eftekhari">
+<meta property="og:title" content="Empirical Bayes for Binomial Probabilities">
+<meta property="og:url" content="https://ehamid.github.io/_posts/empirical_bayes/">
+
+
+  <meta property="og:description" content="Hamid Eftekhari’s Personal Page">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://ehamid.github.io/_posts/empirical_bayes/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ehamid.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hamid Eftekhari Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  <script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Hamid Eftekhari
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/portfolio/">Projects</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <p>In a recent project I encountered a problem that after some pre-processing reduces to estimation of probabilities for many independent Binomial experiments each having a different success probability. Also, in each experiment the number of trials is not large, so some way of pooling the data seemed appropriate. I thought empirical Bayes may be useful here and this post describes some of the approaches inspired by this methodology. Next I describe the mathematical formulation of the problem.</p>
+
+<p>Suppose that \(X_i \sim \operatorname{Bin}(m,p_i), i = 1,2,\dots,n\) are iid binomial random variables with known \(m\) and unknown \(p_i\). Our goal is to estimate \(p_i\) given the observations \((X_i)_1^n\).</p>
+
+<p>The most natural estimate for \(p_i\) is perhaps \(X_i / m\), the proportion of successes among the \(m\) trials. This is an unbiased, uniformly minimum variance estimate of \(p_i\) and by the strong/weak law of large numbers it is also consistent as \(m \rightarrow \infty\). But can we do better when \(m\) is not large?</p>
+
+<p>Specifically, we are interested in cases where \(m \ll n\) (say, \(m = 5\)). Clearly, in this case we have almost as many parameters as observations, and the problem is therefore called a high-dimensional estimation problem. In such cases it is usually beneficial to dispense with the unbiasedness requirement and instead use some sort of shrinkage to trade variance for bias, hoping that at the end this tradeoff results in a better estimator.</p>
+
+<p>Empirical Bayes is one such methodology that allows borrowing strength when faced with many estimation problems together. In this problem, we can relate all these \(n\) seemingly disparate problems by assuming that the parameters \(p_i\) are themselves iid random variables generated according to a prior \(\pi(p)\). In contrast to a genuine Bayesian method, we do not speficy the prior \(\pi(p)\) beforehand.</p>
+
+<p>Let us follow this line of thinking for our problem. The posterior mean seems like a reasonable estimator of \(p_i\) if we can compute it without needing to specify the prior. We have</p>
+
+<p>\[
+E[p_i \mid X_i] = \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{\int {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)} = \frac{ \int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i)}{f_m(X_i)},
+\]
+where \(f_m(X_i)\) denotes the marginal mass/density function of data at \(X_i\) given Bernoulli $m$ trials.
+It seems we are out of luck unless we choose a prior and compute the integral (analytically or via stochastic methods) in the numerator. But that’s where the genius of Robbins’s Empirical Bayes comes in.</p>
+
+<p>The numerator already looks kind of like the denominator. Let’s see if we can write it in terms of a quantity that can be estimated based on data alone (like the marginal in the denominator). We can rewrite the numerator as</p>
+
+<p>\[ 
+\int p_i {m \choose X_i} p_i^{X_i} (1 - p_i)^{m - X_i} d\pi(p_i) = \frac \int {m+1 \choose X_i+1} p_i^{X_i+1} (1 - p_i)^{(m+1) - (X_i+1)} d\pi(p_i) <br>
+= \frac{X_i + 1}{(m+1)} f_{m+1}(X_i + 1),
+\]
+where \(f_{m+1}\) is the p.m.f. of data but now given \(m+1\) trials. Plugging this back into the equation for the posterior mean, we find</p>
+
+<p>\[
+E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)}.
+\]</p>
+
+<p>This looks promising. It is fairly obvious how to estimate \(f_m\) given the data we have: for \(0 \leq k \leq m\) we can estimate \(f_m(k)\) by the proportion of \(X_i\) that are equal to \(k\):</p>
+
+<p>\[
+\hat{f}_m(k) = \frac{|{ i \leq n : X_i = k  } |}{n}.
+\]</p>
+
+<p>It is less clear how to estimate \(\hat{f}_{m+1}(k)\) since it requires data from \(\operatorname{Bin}(m+1, p_i)\) distribution which we don’t have. We can not make up the extra \((m+1)\)th observation, but what we can do, is to first pretend we only observed \(m-1\) observations (and replace \(m\) by \(m-1\) in the above formula), and then bring in the \(m\)th trial as the extra observation. This is exactly what <a href="https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%201:%20Contributions%20to%20the%20Theory%20of%20Statistics/chapter/An%20Empirical%20Bayes%20Approach%20to%20Statistics/bsmsp/1200501653">Robbins (1955)</a> suggested: if we let \(X_i'\) be the number of successes among the first \(m-1\) trials in stage \(i\), then we can compute an estimate</p>
+
+<p>\[
+\hat{p}<em>i = \frac{ X_i’ + 1 }{m} \cdot \frac{\hat{f}</em>{m}(X_i’ + 1)}{\hat{f}_{m-1}.(X_i’)}.
+\]</p>
+
+<p>This doesn’t look too bad. In a future post I’ll show that estimating odds \(p_i / (1 - p_i)\) or log-odds \(\log(p_i / (1 - p_i) )\) may be more straightforward, and then we can compare several of these estimators in our particular problem.</p>
+
+<p>In addition to <a href="https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%201:%20Contributions%20to%20the%20Theory%20of%20Statistics/chapter/An%20Empirical%20Bayes%20Approach%20to%20Statistics/bsmsp/1200501653">Robbins (1955)</a>, a good source to learn more about empirical Bayes is Efron’s <a href="https://statweb.stanford.edu/~ckirby/brad/LSI/monograph_CUP.pdf">Large-Scale Inference: Empirical Bayes Methods for Estimation, Testing and Prediction</a>.</p>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ehamid" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/hamid-eftekhari-a541a5118/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-google" aria-hidden="true"></i> Scholar</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2021 Hamid Eftekhari. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
