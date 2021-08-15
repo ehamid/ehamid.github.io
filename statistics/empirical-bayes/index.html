@@ -162,23 +162,23 @@
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/bio-photo.jpg" alt="Hamid Eftekhari" itemprop="image">
-      
+      <a href="https://ehamid.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Hamid Eftekhari" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://ehamid.github.io/" itemprop="url">Hamid Eftekhari</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Hamid Eftekhari</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>PhD candidate in Statistics at the University of Michigan and current data science intern at Google; interested in high-dimensional inference and machine learning.</p>
+      <div class="author__bio p-note" itemprop="description">
+        <p>PhD candidate in Statistics at the University of Michigan; interested in high-dimensional inference and machine learning.</p>
 
       </div>
     
@@ -192,15 +192,15 @@
       
         
           
-            <li><a href="https://github.com/ehamid" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+            <li><a href="https://github.com/ehamid" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
           
         
           
-            <li><a href="https://www.linkedin.com/in/hamid-eftekhari-a541a5118/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.linkedin.com/in/hamid-eftekhari-a541a5118/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
           
         
           
-            <li><a href="https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-google" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
+            <li><a href="https://scholar.google.com/citations?user=leRBMesAAAAJ&hl=en" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-google" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
           
         
       
@@ -255,7 +255,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -263,13 +263,12 @@
     </ul>
   </div>
 </div>
-
   
   </div>
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Empirical Bayes for Binomial Probabilities">
     <meta itemprop="description" content="In a recent project I encountered a problem that after some pre-processing reduces to estimation of probabilities for many independent Binomial experiments each having a different success probability. Also, in each experiment the number of trials is not large, so some way of pooling the data seemed appropriate. I thought empirical Bayes may be useful here and this post describes some of the approaches inspired by this methodology. Next I describe the mathematical formulation of the problem.">
     <meta itemprop="datePublished" content="2021-06-27T00:00:00-04:00">
@@ -278,8 +277,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Empirical Bayes for Binomial Probabilities
-</h1>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://ehamid.github.io/statistics/empirical-bayes/" class="u-url" itemprop="url">Empirical Bayes for Binomial Probabilities
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -304,7 +305,7 @@
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
         <p>In a recent project I encountered a problem that after some pre-processing reduces to estimation of probabilities for many independent Binomial experiments each having a different success probability. Also, in each experiment the number of trials is not large, so some way of pooling the data seemed appropriate. I thought empirical Bayes may be useful here and this post describes some of the approaches inspired by this methodology. Next I describe the mathematical formulation of the problem.</p>
 
@@ -370,11 +371,11 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#empirical-bayes" class="page__taxonomy-item" rel="tag">Empirical Bayes</a><span class="sep">, </span>
+      <a href="/tags/#empirical-bayes" class="page__taxonomy-item p-category" rel="tag">Empirical Bayes</a><span class="sep">, </span>
     
-      <a href="/tags/#hierarchical-bayes" class="page__taxonomy-item" rel="tag">Hierarchical Bayes</a><span class="sep">, </span>
+      <a href="/tags/#hierarchical-bayes" class="page__taxonomy-item p-category" rel="tag">Hierarchical Bayes</a><span class="sep">, </span>
     
-      <a href="/tags/#large-scale-inference" class="page__taxonomy-item" rel="tag">Large-Scale Inference</a>
+      <a href="/tags/#large-scale-inference" class="page__taxonomy-item p-category" rel="tag">Large-Scale Inference</a>
     
     </span>
   </p>
@@ -391,7 +392,7 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#statistics" class="page__taxonomy-item" rel="tag">Statistics</a>
+      <a href="/categories/#statistics" class="page__taxonomy-item p-category" rel="tag">Statistics</a>
     
     </span>
   </p>
@@ -399,8 +400,7 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-06-27T00:00:00-04:00">June 27, 2021</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-06-27T00:00:00-04:00">June 27, 2021</time></p>
 
       </footer>
 
@@ -424,7 +424,7 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <h2 class="page__related-title">You May Also Enjoy</h2>
       <div class="grid__wrapper">
         
           
@@ -433,13 +433,12 @@ E[p_i \mid X_i] = \frac{(X_i + 1)}{ m+1 } \cdot \frac{f_{m+1}(X_i+1)}{f_{m}(X_i)
     </div>
   
 </div>
-
     </div>
 
     
       <div class="search-content">
         <div class="search-content__inner-wrap">
-<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
     <label class="sr-only" for="search">
       Enter your search term...
     </label>
